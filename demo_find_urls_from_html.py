@@ -1,3 +1,6 @@
+#!/usr/bin/python
+# -*- coding: UTF-8 -*-
+
 from urllib import request
 from bs4 import BeautifulSoup
 
