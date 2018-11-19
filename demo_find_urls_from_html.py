@@ -6,7 +6,7 @@ from bs4 import BeautifulSoup
 
 response = request.urlopen("https://movie.douban.com/chart")
 html = response.read()
-soup = BeautifulSoup(html, features="html5lib")
+soup = BeautifulSoup(html, features="html")
 # 有效的URL
 links = soup.select('a[class=""]')
 # 带有无效的URL信息
