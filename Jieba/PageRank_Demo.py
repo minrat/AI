@@ -4,7 +4,6 @@
 from pygraph.classes.digraph import digraph
 
 class PageRank:
-    __doc__ = '''计算一张图中的PR值'''
 
     def __init__(self, dg):
         self.damping_factor = 0.85  # 阻尼系数,即α
@@ -25,17 +24,17 @@ class PageRank:
         if graph_size == 0:
             return {}
         page_rank = dict.fromkeys(nodes, 1.0 / graph_size)  # 给每个节点赋予初始的PR值
-        damping_value = (1.0 - self.damping_factor) / graph_size  # 公式中的(1−α)/N部分
+        damping_value = (1.0 - self.damping_factor) / graph_size  # 构造公式中的(1−α)/N部分
 
         flag = False
         for i in range(self.max_iterations):
             change = 0
             for node in nodes:
                 rank = 0
-                for incident_page in self.graph.incidents(node):  # 遍历所有“入射”的页面
+                for incident_page in self.graph.incidents(node): 
                     rank += self.damping_factor * (page_rank[incident_page] / len(self.graph.neighbors(incident_page)))
                 rank += damping_value
-                change += abs(page_rank[node] - rank)  # 绝对值
+                change += abs(page_rank[node] - rank) 
                 page_rank[node] = rank
             print("This is NO.%s iteration" % (i + 1))
             print(page_rank)
