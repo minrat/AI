@@ -23,3 +23,13 @@
 ## 7.K-means(聚类算法)
 #### a)重点：欧式距离  
 
+## 8.Linear Regression(线性回归)
+### a)重点：最小二乘法
+
+## 9.Jieba（分词）
+### a)重点：PageRank
+### b)基于PageRank 的 TextRank
+
+## 10.Word2Vec & Doc2Vec
+### a)Ont-Hot 编码
+### b)词向量
