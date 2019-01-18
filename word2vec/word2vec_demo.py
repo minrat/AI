@@ -9,7 +9,7 @@ import os
 # 处理训练模型的语料
 def create_data_set(src_file):
     global dest_file
-    dest_file = src_file + '_jieba_out'
+    dest_file = src_file + '_out'
 
     # 文件读取
     f1 = open(src_file, 'r', encoding='utf-8')
@@ -35,8 +35,8 @@ def model_train(train_file_name, out_model_file):
     # 加载语料
     sentences = word2vec.Text8Corpus(train_file_name)
 
-    # 训练skip-gram模型; 默认window=5
-    model = gensim.models.Word2Vec(sentences, size=200)
+    # 训练skip-gram模型
+    model = gensim.models.Word2Vec(sentences, size=200, window=5, cbow_mean=1)
     model.save(out_model_file)
 
     # 以二进制类型保存模型
@@ -67,7 +67,7 @@ if __name__ == '__main__':
         print(u" [盆菜] 和 [牛肉] 的相似度为：", relate_value)
 
         # 计算与指定词的相关词（top）列表
-        y2 = trained_model.most_similar("牛肉", topn=10)
+        result = trained_model.most_similar("牛肉", topn=10)
         print(u"与 [牛肉] 最相关的词有：\n")
-        for item in y2:
+        for item in result:
             print(item[0], item[1])
