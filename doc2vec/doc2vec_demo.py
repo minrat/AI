@@ -52,4 +52,4 @@ if __name__ == '__main__':
         words = ''
         for word in sentence[0]:
             words = words + word + ' '
-        print(words, similar_result))
+        print(words, similar_result)
