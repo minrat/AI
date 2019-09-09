@@ -168,8 +168,8 @@ if __name__ == '__main__':
     flag = True
 
     parser = argparse.ArgumentParser(description='testing')
-    parser.add_argument("--input_file", type=str, help='Input csv dataset')
-    parser.add_argument("--output_file", type=str, help='Output csv dataset')
+    parser.add_argument("--input_file", type=str, help='Input The Source Video File')
+    parser.add_argument("--output_file", type=str, help='Output Target Video File Name')
     params, _ = parser.parse_known_args()
 
     # verify the standard command format
