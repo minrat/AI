@@ -42,6 +42,12 @@ color = 0
 # # 填色结束
 # turtle.end_fill()
 # turtle.penup()
+# 颜色顺序数值如下：
+# (232,52,151)
+# (186,35,141)
+# (110,220,189)
+# (142,57,197)
+# (247,112,86)
 
 while count < 5:
     turtle.fillcolor(255-color, 255-color, 255-color)
